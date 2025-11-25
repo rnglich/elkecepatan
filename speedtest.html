@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Speedtest Sederhana</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Internet Speed Test</h1>
+          <p class="lead">Uji Kecepatan Internet Anda</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="main">
+      <!-- Left Panel -->
+      <div class="left">
+        <div class="widget-wrap card">
+          <div class="widget-header">
+            <div>
+              <div class="muted">Ready to test?</div>
+              <div class="buttons" style="margin-top:10px;">
+                <button id="startBtn" class="start-btn">▶ Mulai Test</button>
+                <button id="restartBtn" class="start-btn restart" style="display:none;background:#ff6b6b;">
+                  Ulangi
+                </button>
+              </div>
+            </div>
+            <div id="status" class="muted" style="text-align:right;">
+              <div id="statusLine">Idle</div>
+            </div>
+          </div>
+
+          <div id="loadingArea" style="margin-top:14px; display:none;">
+            <div class="loading">
+              <div class="spinner"></div>
+              <div class="muted">Menghubungkan ke tes...</div>
+            </div>
+          </div>
+
+          <div id="iframeWrap" class="iframe-container" aria-hidden="true">
+            <div class="iframe-placeholder">
+              <div class="muted">Memuat speedtest...</div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px; text-align:right;">
+            <a class="small-link" href="https://openspeedtest.com" target="_blank">
+           
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Panel -->
+      <aside>
+        <div class="card">
+          <div class="info-header" style="margin-bottom:8px;">
+            <div style="font-size:14px; font-weight:700;">Informasi Koneksi</div>
+            <div class="muted" style="font-size:12px;">Update cepat sebelum/during test</div>
+          </div>
+
+          <div class="info-list">
+            <div class="info-item">
+              <div class="info-label">Jaringan</div>
+              <div id="networkValue" class="info-value">—</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Perkiraan Ping Sebelum Tes</div>
+              <div id="pingValue" class="info-value">Idle</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Status Tes</div>
+              <div id="testState" class="info-value">Idle</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
